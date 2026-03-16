@@ -17,7 +17,7 @@ SELECT
     r.name AS role_name,
     r.access_level,
     ARRAY_AGG(DISTINCT s.name ORDER BY s.name) FILTER (WHERE s.name IS NOT NULL) AS sectors,
-    ARRAY_AGG(DISTINCT s.id ORDER BY s.name) FILTER (WHERE s.id IS NOT NULL) AS sector_ids,
+    ARRAY_AGG(DISTINCT s.id ORDER BY s.id) FILTER (WHERE s.id IS NOT NULL) AS sector_ids,
     u.created_at,
     u.updated_at
 FROM users u
